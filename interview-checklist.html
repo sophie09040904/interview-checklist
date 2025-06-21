@@ -1,0 +1,905 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Interview Final Check List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .wing-sky-logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .category {
+            margin-bottom: 30px;
+        }
+        
+        .category-title {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+            border-left: 5px solid #4ecdc4;
+            margin-bottom: 15px;
+        }
+        
+        .question-item {
+            display: flex;
+            padding: 12px 20px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s ease;
+        }
+        
+        .question-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #666;
+            min-width: 40px;
+            margin-right: 15px;
+        }
+        
+        .question-text {
+            flex: 1;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .checkbox {
+            margin-left: 15px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 3px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .checkbox.checked {
+            background: #4ecdc4;
+            border-color: #4ecdc4;
+            color: white;
+        }
+        
+        .checkbox:hover {
+            border-color: #4ecdc4;
+        }
+        
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #4ecdc4;
+            transition: width 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .stats {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .wing-sky-logo {
+                position: static;
+                margin-top: 10px;
+                display: inline-block;
+            }
+            
+            .stats {
+                position: static;
+                margin: 20px auto;
+                text-align: center;
+                width: fit-content;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="wing-sky-logo">WING SKY</div>
+            <h1>English Interview Final Check List</h1>
+            <p>✈️ 승무원 영어 면접 체크리스트 ✈️</p>
+        </div>
+        
+        <div class="content">
+            <!-- 워밍업 -->
+            <div class="category">
+                <div class="category-title">워밍업 (Warm-up)</div>
+                <div class="question-item">
+                    <div class="question-number">1</div>
+                    <div class="question-text">Can I ask your name?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">2</div>
+                    <div class="question-text">How do you feel? / Are you tired?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">3</div>
+                    <div class="question-text">Are you nervous?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">4</div>
+                    <div class="question-text">What time did you come here?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">5</div>
+                    <div class="question-text">What did you do before you came in?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">6</div>
+                    <div class="question-text">Did you come here alone?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">7</div>
+                    <div class="question-text">What date is it today?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">8</div>
+                    <div class="question-text">Where were you born?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">9</div>
+                    <div class="question-text">When were you born?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">10</div>
+                    <div class="question-text">How is the weather today?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">11</div>
+                    <div class="question-text">What time did you get up?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">12</div>
+                    <div class="question-text">What have you done so far?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">13</div>
+                    <div class="question-text">Have you ever applied to our company before?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">14</div>
+                    <div class="question-text">Where do you live?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">15</div>
+                    <div class="question-text">How long have you lived there?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">16</div>
+                    <div class="question-text">How long did it take to get here?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">17</div>
+                    <div class="question-text">Can you tell me how to get here?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">18</div>
+                    <div class="question-text">What did your parents say to you today?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">19</div>
+                    <div class="question-text">Do your parents want you to become a flight attendant?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">20</div>
+                    <div class="question-text">Did you have breakfast (lunch)?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+            </div>
+
+            <!-- 성격 -->
+            <div class="category">
+                <div class="category-title">성격 (Personality)</div>
+                <div class="question-item">
+                    <div class="question-number">21</div>
+                    <div class="question-text">Can you tell me about your personality?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">22</div>
+                    <div class="question-text">What characteristics would be suitable for this position?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">23</div>
+                    <div class="question-text">What do your parents (friends) say about your personality?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">24</div>
+                    <div class="question-text">What kind of people do you like?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">25</div>
+                    <div class="question-text">What kind of people do you like to work with?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">26</div>
+                    <div class="question-text">Tell me your ideal type.</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">27</div>
+                    <div class="question-text">What's your boyfriend's personality like?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">28</div>
+                    <div class="question-text">Can you describe one of your best friends?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">29</div>
+                    <div class="question-text">How many members are in your family?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">30</div>
+                    <div class="question-text">Can you describe (your brother, your sister, your mother, your father)?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+            </div>
+
+            <!-- 여행 -->
+            <div class="category">
+                <div class="category-title">여행 (Travel)</div>
+                <div class="question-item">
+                    <div class="question-number">31</div>
+                    <div class="question-text">Have you ever been abroad?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">32</div>
+                    <div class="question-text">Where have you been?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">33</div>
+                    <div class="question-text">Why did you go there?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">34</div>
+                    <div class="question-text">How long did you stay there?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">35</div>
+                    <div class="question-text">What did you do there?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">36</div>
+                    <div class="question-text">Which city has been the best you've been to so far?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">37</div>
+                    <div class="question-text">How is it different between _____ and Korean?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">38</div>
+                    <div class="question-text">How was the Canada's weather?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">39</div>
+                    <div class="question-text">Have you ever been in a difficult situation while traveling?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">40</div>
+                    <div class="question-text">What did you learn through traveling?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+            </div>
+
+            <!-- 경력 -->
+            <div class="category">
+                <div class="category-title">경력 (Career Experience)</div>
+                <div class="question-item">
+                    <div class="question-number">41</div>
+                    <div class="question-text">What do you do for a living?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">42</div>
+                    <div class="question-text">Can you tell me about your current job?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">43</div>
+                    <div class="question-text">Have you ever worked in the service field?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">44</div>
+                    <div class="question-text">How long have you worked/did you work there?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">45</div>
+                    <div class="question-text">What did you do there?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">46</div>
+                    <div class="question-text">What were difficult things about working there?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">47</div>
+                    <div class="question-text">Can you tell me about your work experience?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">48</div>
+                    <div class="question-text">What did you learn through your work experience?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">49</div>
+                    <div class="question-text">Do you think your prior working experience will be useful in this field?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+            </div>
+
+            <!-- 전공&학교생활&봉사활동 -->
+            <div class="category">
+                <div class="category-title">전공&학교생활&봉사활동 (Major & School Life & Volunteer)</div>
+                <div class="question-item">
+                    <div class="question-number">50</div>
+                    <div class="question-text">What's your major?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">51</div>
+                    <div class="question-text">Why did you choose it?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">52</div>
+                    <div class="question-text">What did you learn from your major?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">53</div>
+                    <div class="question-text">What kinds of classes did you take?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">54</div>
+                    <div class="question-text">What was your favorite subject?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">55</div>
+                    <div class="question-text">What was your worst subject?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">56</div>
+                    <div class="question-text">Can you tell me about your university life?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">57</div>
+                    <div class="question-text">Can you tell me about your school activity?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">58</div>
+                    <div class="question-text">Can you tell me about your voluntary activity?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+            </div>
+
+            <!-- 영어공부&인터뷰 준비 -->
+            <div class="category">
+                <div class="category-title">영어공부&인터뷰 준비 (English Study & Interview Preparation)</div>
+                <div class="question-item">
+                    <div class="question-number">59</div>
+                    <div class="question-text">You are good at speaking English. Have you ever been abroad to study English?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">60</div>
+                    <div class="question-text">How have you studied English?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">61</div>
+                    <div class="question-text">How well can you speak English?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">62</div>
+                    <div class="question-text">Why is English very important?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">63</div>
+                    <div class="question-text">Can you speak another language?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">64</div>
+                    <div class="question-text">What have you prepared for this interview?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">65</div>
+                    <div class="question-text">How long have you prepared to be a flight attendant?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+            </div>
+
+            <!-- 본인&직업에 대한 장, 단점 -->
+            <div class="category">
+                <div class="category-title">본인&직업에 대한 장, 단점 (Personal & Job Advantages/Disadvantages)</div>
+                <div class="question-item">
+                    <div class="question-number">66</div>
+                    <div class="question-text">Why do you want to become a flight attendant?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">67</div>
+                    <div class="question-text">What are some advantages of working as a flight attendant?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">68</div>
+                    <div class="question-text">What are some disadvantages of working as a flight attendant?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">69</div>
+                    <div class="question-text">What are your strong points?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">70</div>
+                    <div class="question-text">What are your weak points?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+            </div>
+
+            <!-- 음식 -->
+            <div class="category">
+                <div class="category-title">음식 (Food)</div>
+                <div class="question-item">
+                    <div class="question-number">71</div>
+                    <div class="question-text">What kind of food do you like?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">72</div>
+                    <div class="question-text">Can you make it?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">73</div>
+                    <div class="question-text">As you know, the job of flight attendants is hard. What food would be good for flight attendants?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">74</div>
+                    <div class="question-text">If you have a chance to recommend the best Korean food to a foreigner, what would you recommend?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">75</div>
+                    <div class="question-text">Can you recommend any good restaurants that are located near your place?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+            </div>
+
+            <!-- 장소 -->
+            <div class="category">
+                <div class="category-title">장소 (Places)</div>
+                <div class="question-item">
+                    <div class="question-number">76</div>
+                    <div class="question-text">Which city has been the best you've been to so far?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">77</div>
+                    <div class="question-text">Which city would you like to see added as a new destination for our airline?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">78</div>
+                    <div class="question-text">If you become a flight attendant, where would you like to go first?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">79</div>
+                    <div class="question-text">If one of the passengers asks you the best place to travel in Seoul, where would you like to recommend? Can you describe Jeju Island?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">80</div>
+                    <div class="question-text">Can you describe Myung-dong?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">81</div>
+                    <div class="question-text">Can you describe Insa-dong?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">82</div>
+                    <div class="question-text">Can you describe Dongdaemun?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">83</div>
+                    <div class="question-text">Can you tell me about your hometown?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+            </div>
+
+            <!-- 롤플레이 -->
+            <div class="category">
+                <div class="category-title">롤플레이 (Role Play)</div>
+                <div class="question-item">
+                    <div class="question-number">84</div>
+                    <div class="question-text">If a passenger smokes on the airplane, how can you handle him/her?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">85</div>
+                    <div class="question-text">Why is smoking very dangerous?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">86</div>
+                    <div class="question-text">If a drunken passenger keeps requesting more alcohol, what would you do?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">87</div>
+                    <div class="question-text">If a passenger asks you on a date, what would you do?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">88</div>
+                    <div class="question-text">If a passenger keeps touching your butt, what would you do?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">89</div>
+                    <div class="question-text">If a baby keeps crying, what would you do?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">90</div>
+                    <div class="question-text">How can you explain bibimbap? Can you explain how to eat it?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">91</div>
+                    <div class="question-text">If a passenger takes a blanket, what would you do?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">92</div>
+                    <div class="question-text">If you have some tension with a senior, how could you handle it?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">93</div>
+                    <div class="question-text">How can you recognize a passenger who is angry?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">94</div>
+                    <div class="question-text">If you knew you were dying in a month, what would you do before?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">95</div>
+                    <div class="question-text">What would you do if an economy-class passenger asks for the first-class meal?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">96</div>
+                    <div class="question-text">If a passenger wants to change his/her seat to first class, what would you do?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">97</div>
+                    <div class="question-text">If the passenger complains that it's hot in the aircraft, what would you do?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">98</div>
+                    <div class="question-text">If the passenger complains that it's cold in the aircraft, what would you do?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">99</div>
+                    <div class="question-text">If there is a bomb threat on a plane, how would you feel? How would you handle yourself?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">100</div>
+                    <div class="question-text">What do you think are some difficult problems working with foreign passengers?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">101</div>
+                    <div class="question-text">There could be a lot of emergency situations on airplanes. How would you handle them?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">102</div>
+                    <div class="question-text">If you get your first paycheck, what would you like to do with this money first?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">103</div>
+                    <div class="question-text">What would be your reaction toward an angry passenger? And why?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">104</div>
+                    <div class="question-text">How different is it between a passport and a visa?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">105</div>
+                    <div class="question-text">If a passenger asks "How much money do you make?" What would you say?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">106</div>
+                    <div class="question-text">If your boyfriend takes Korean air with another girl, what would you do?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">107</div>
+                    <div class="question-text">I am sorry to ask this question. If you fail to get a job this time, what would you do?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">108</div>
+                    <div class="question-text">You spilled hot coffee on a passenger due to sudden turbulence, what would you do?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+            </div>
+
+            <!-- 건강&스트레스 -->
+            <div class="category">
+                <div class="category-title">건강&스트레스 (Health & Stress)</div>
+                <div class="question-item">
+                    <div class="question-number">109</div>
+                    <div class="question-text">How do you keep your health?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">110</div>
+                    <div class="question-text">When do you get stressed out?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">111</div>
+                    <div class="question-text">How do you handle your stress?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">112</div>
+                    <div class="question-text">If your co-worker (senior) is in a stressful situation, how can you help her handle it?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+            </div>
+
+            <!-- 자질&포부 -->
+            <div class="category">
+                <div class="category-title">자질&포부 (Qualifications & Aspirations)</div>
+                <div class="question-item">
+                    <div class="question-number">113</div>
+                    <div class="question-text">What kind of flight attendant would you like to be?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">114</div>
+                    <div class="question-text">What kind of service would you like to offer?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">115</div>
+                    <div class="question-text">What is your impression of a flight attendant? / What do you think about the job of a flight attendant?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">116</div>
+                    <div class="question-text">Do you know what they do in the cabin?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">117</div>
+                    <div class="question-text">What are some important characteristics of becoming a flight attendant?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">118</div>
+                    <div class="question-text">If you were me, who would you like to hire?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">119</div>
+                    <div class="question-text">Which one is more important: safety or good service?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">120</div>
+                    <div class="question-text">How long will you work at our company?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">121</div>
+                    <div class="question-text">What do you expect to be doing in 10 years? What will you do in 10 years? What are your long-term goals?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+                <div class="question-item">
+                    <div class="question-number">122</div>
+                    <div class="question-text">What are your short-term goals?</div>
+                    <div class="checkbox" onclick="toggleCheck(this)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div>완료: <span id="completed">0</span> / 122</div>
+        <div>진행률: <span id="percentage">0</span>%</div>
+    </div>
+
+    <script>
+        let completedCount = 0;
+        const totalQuestions = 122;
+
+        function toggleCheck(checkbox) {
+            if (checkbox.classList.contains('checked')) {
+                checkbox.classList.remove('checked');
+                checkbox.innerHTML = '';
+                completedCount--;
+            } else {
+                checkbox.classList.add('checked');
+                checkbox.innerHTML = '✓';
+                completedCount++;
+            }
+            
+            updateStats();
+            updateProgressBar();
+        }
+
+        function updateStats() {
+            document.getElementById('completed').textContent = completedCount;
+            document.getElementById('percentage').textContent = Math.round((completedCount / totalQuestions) * 100);
+        }
+
+        function updateProgressBar() {
+            const percentage = (completedCount / totalQuestions) * 100;
+            document.getElementById('progressBar').style.width = percentage + '%';
+        }
+
+        // 스크롤 시 진행률 표시
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            
+            if (completedCount === 0) {
+                document.getElementById('progressBar').style.width = Math.min(scrollPercent, 100) + '%';
+            }
+        });
+
+        // 페이지 로드 시 초기화
+        updateStats();
+        updateProgressBar();
+    </script>
+</body>
+</html>
